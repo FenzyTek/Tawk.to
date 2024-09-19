@@ -1,0 +1,35 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Webhook Example for Message",
+    "version": "1.0.0"
+  },
+  "webhooks": {
+    "newMessage": {
+      "get": {
+        "parameters": [
+          {
+            "name": "message",
+            "in": "query",
+            "description": "The message content to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Message received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Your message
