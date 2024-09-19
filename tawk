@@ -7,6 +7,14 @@
   "webhooks": {
     "newMessage": {
       "get": {
+        "description": "This endpoint listens for incoming messages and is triggered by sending data to the webhook URL.",
+        "summary": "Receive messages via a GET request.",
+        "servers": [
+          {
+            "url": "https://hook.eu2.make.com/earcj383sdebne4tk0m1f6wk8412xf4x",
+            "description": "Make.com webhook URL for receiving messages"
+          }
+        ],
         "parameters": [
           {
             "name": "message",
@@ -32,4 +40,18 @@
                     },
                     "message": {
                       "type": "string",
-                      "example": "Your message
+                      "example": "Your message has been received"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Message not found"
+          }
+        }
+      }
+    }
+  }
+}
